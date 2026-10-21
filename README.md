@@ -7,11 +7,12 @@ Once connected, your assistant can read and work with your GlassFrog data as you
 ## Server URL
 
 ```
-https://app.glassfrog.com/api/v5/mcp
+https://app.glassfrog.com/api/v5/mcp/core
 ```
 
 - **Transport:** Streamable HTTP
 - **Auth:** OAuth 2.0 with dynamic client registration. You sign in to GlassFrog and approve the connection; no API key needed.
+- **Tool sets:** `/api/v5/mcp/core` serves the everyday tools listed below. `/api/v5/mcp` serves every tool, including skill authoring, for clients that want the full set. Both use the same sign-in and permissions.
 
 ## Before you start
 
@@ -53,13 +54,13 @@ In GlassFrog, click your name in the sidebar, open the **API** tab and go to **C
 Any MCP client that supports Streamable HTTP and OAuth 2.0 can connect with the URL above. Clients without OAuth can use a GlassFrog API key (your profile → **API** tab) in an `Authorization: Bearer` header:
 
 ```bash
-claude mcp add --transport http glassfrog https://app.glassfrog.com/api/v5/mcp \
+claude mcp add --transport http glassfrog https://app.glassfrog.com/api/v5/mcp/core \
   --header "Authorization: Bearer YOUR_API_KEY"
 ```
 
 ## Tools
 
-Read-only:
+The tools on `/api/v5/mcp/core`. Read-only:
 
 - **glassfrog_search** — Search across the organization.
 - **glassfrog_listRoles** / **glassfrog_getRole** — Roles with purpose, accountabilities, domains and fillers.
@@ -72,6 +73,8 @@ Read-only:
 - **glassfrog_listNotes** / **glassfrog_getNote** — Role notes.
 - **glassfrog_listSkills** / **glassfrog_getSkill** — Skills in the organization's library.
 - **glassfrog_listChannels** / **glassfrog_getChannel** / **glassfrog_listMessages** — Role channels and messages.
+- **glassfrog_listMyMessages** — New messages across all your channels.
+- **glassfrog_listWorkRequests** / **glassfrog_getWorkRequest** — Requests between roles.
 - **glassfrog_readApiSpec** — The GlassFrog v5 OpenAPI specification.
 
 Write:
@@ -80,7 +83,6 @@ Write:
 - **glassfrog_createAction** / **glassfrog_updateAction** — Create or update next actions.
 - **glassfrog_createTension** — Raise a tension on a role.
 - **glassfrog_createNote** / **glassfrog_updateNote** — Create or update role notes.
-- **glassfrog_createSkill** / **glassfrog_updateSkill** — Create or update skills.
 - **glassfrog_addTag** / **glassfrog_removeTag** — Tag notes, skills, roles, projects and actions.
 - **glassfrog_postMessage** / **glassfrog_markChannelRead** — Post to role channels; mark them read.
 - **glassfrog_startSession** / **glassfrog_endSession** — Start and end an agent session for a role.
