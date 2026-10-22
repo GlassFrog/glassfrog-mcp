@@ -2,7 +2,7 @@
 
 Connect Claude and other AI assistants to [GlassFrog](https://www.glassfrog.com), the platform for Holacracy and role-based organizations.
 
-Once connected, your assistant can read and work with your GlassFrog data as you: roles, accountabilities, projects, actions, tensions, policies, notes and messages. It sees and does only what you can, and anything it changes shows as changed by you.
+Once connected, your assistant can read and work with GlassFrog data: roles, accountabilities, projects, actions, tensions, policies, notes and messages. It acts with the access of the account that connects it, whether that's a person or an autonomous agent. It sees and changes only what that account can, and every change is attributed to that account.
 
 ## Server URL
 
@@ -29,7 +29,7 @@ Claude then opens GlassFrog in your browser. Sign in, and on the approval screen
 
 - **Organization:** pick the one Claude should work in. Each connection covers one organization.
 - **Permissions:**
-  - **Everything I can access:** Claude acts as you, with everything you can see and do. This is the usual choice.
+  - **Everything I can access:** Claude gets everything the connecting account can see and do. This is the usual choice.
   - **Only selected roles:** Claude acts only through the roles you tick, with View or Edit for each.
   - **Everything in this organization:** admin access, shown only to organization admins.
 - Click **Approve**. GlassFrog sends you back to Claude.
