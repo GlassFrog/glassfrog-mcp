@@ -63,18 +63,18 @@ claude mcp add --transport http glassfrog https://app.glassfrog.com/api/v5/mcp/c
 The tools on `/api/v5/mcp/core`. Read-only:
 
 - **glassfrog_search** — Search across the organization.
-- **glassfrog_listRoles** / **glassfrog_getRole** — Roles with purpose, accountabilities, domains and fillers.
+- **glassfrog_list** — List records of one type: roles, projects, actions, tensions, notes, skills, sessions, assignments, people or work requests, with that type's filters.
+- **glassfrog_getRole** — A role with purpose, accountabilities, domains and fillers.
 - **glassfrog_getRoleContext** — Everything needed to work a role.
-- **glassfrog_listAssignments** — Who fills which role.
-- **glassfrog_listPeople** / **glassfrog_getPerson** — Organization members.
-- **glassfrog_listProjects** / **glassfrog_getProject** — Projects.
-- **glassfrog_listActions** / **glassfrog_getAction** — Next actions.
+- **glassfrog_getPerson** — An organization member.
+- **glassfrog_getProject** — A project.
+- **glassfrog_getAction** — A next action.
 - **glassfrog_getPolicy** / **glassfrog_getOrgRule** — Policies and organization rules.
-- **glassfrog_listNotes** / **glassfrog_getNote** — Role notes.
-- **glassfrog_listSkills** / **glassfrog_getSkill** — Skills in the organization's library.
+- **glassfrog_getNote** — A role note.
+- **glassfrog_getSkill** — A skill from the organization's library.
 - **glassfrog_listChannels** / **glassfrog_getChannel** / **glassfrog_listMessages** — Role channels and messages.
 - **glassfrog_listMyMessages** — New messages across all your channels.
-- **glassfrog_listWorkRequests** / **glassfrog_getWorkRequest** — Requests between roles.
+- **glassfrog_getWorkRequest** — A request between roles.
 - **glassfrog_readApiSpec** — The GlassFrog v5 OpenAPI specification.
 
 Write:
